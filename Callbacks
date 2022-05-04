@@ -1,0 +1,8 @@
+console.log('this is the first line')
+
+function abc(tarun(){
+  console.log('This is a Callback'},5000)
+  
+ tarun() 
+ console.log('this is the second line')
+ 
