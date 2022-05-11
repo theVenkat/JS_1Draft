@@ -1,0 +1,60 @@
+import React from 'react';
+import ReachDOM from 'react-dom/client';
+
+//Class Component Start
+//Extends or Inheritis all the Methods from React.Component
+class NavBar extends React.Component{ 
+  state = {
+    color = 'grey'
+    };
+  
+  setSignalGreen = () => 
+  {
+  this.setState({color: 'green'})
+  }
+  
+  setSignalRed = () => 
+  {
+  this.setState({color: 'red'})
+  }
+  
+  return()
+  {
+    return <div>
+      <p> Current Light of Traffic: {this.state.color}</p>
+      <br />
+      <br />
+      
+      <button onClick={this.setSignalGreen} Green </button>
+      <button onClick={this.setSignalRed} Red </button>
+      </div>
+  }
+  
+ };
+ 
+ // Class Component End
+ 
+ 
+ class App extends React.Component{
+ 
+ state = {
+  showSignal: false,
+  }
+  
+  toggleSignal = () =>
+  {
+    this.setState({this.showSignal: !this.showSignal});
+  }
+  render(){
+    return (
+    <div>
+      <button onClick={toggleSignal}> Display Traffic Signal </button>
+      {this.state.showSignal ? <NavBar /> : <p> No Traffic Signal</p> }
+      <br />
+      <br />
+      <br />
+    </div>
+   }
+  }
+ //Calling the Component
+ root.render(<app/>)
