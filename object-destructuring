@@ -1,0 +1,35 @@
+const vehicle = {
+  company : 'Tata',
+  model :' nexon',
+  yom : '2022',
+  transmission: 'automatic',
+  variant : {
+    petrol: true,
+    ev : true,
+    seating: {type: {
+    onevariant :'5seater',
+    topvarient : '7 seater',
+    },
+    }
+  },
+  cust_details:{
+    name: {
+      fname :  'sai',
+      lname : 'venkat'
+    },
+    address:{
+      hno: '1-2-3 hyderabad',
+      landmark: 'KGF',
+    },
+    phoneno: undefined
+  }
+}
+ 
+ 
+//const cust = vehicle.cust_details
+//console.log(cust.name)
+ 
+const  {company, model,cust_details:{name:{fname, lname}, address:{landmark}}, phoneno=123456, variant:{seating:{type:{onevariant}}}} = vehicle
+ 
+ 
+console.log(onevariant)
