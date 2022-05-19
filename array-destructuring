@@ -1,32 +1,34 @@
 //Array DeStructuring
-
 //Nested Array 5 layers
+//In this Code, we are trying to extract the properity or variable in the 5th nested Array. i.e.,1-2-3 KGF
 
-const company = [{
-  personDetails: {
-    nameDetails:{
+const company = [{ //one nested array
+  personDetails: {  //Object 1 in Company array
+    nameDetails:{    //Property 1 in PersonDetails
       fname:'sai',
       lname:'venkat',
-      age : {
+      age : {         //Property 2 in PersonDetails
         truth : 'cheparu pushpa',
         noTruth : undefined, //will get type error if I access notruth.somename, cannot define for undefined
       },
-      address: [{
-        presentAddress: ['KGF', 'Bangarupu kundi ',[{
-          access:'Inko Nested arraylo chepta',
-          confirm : ['1-2-3', [{
-            lockChey: '1-2-3 KGF'
+      
+      
+      address: [{     //two nested array and 3rd Property in PersonDetails
+        presentAddress: ['KGF', 'Bangarupu kundi ',[{    //third , fourth nested array //First Object & Properity in adress array
+          access:'Inko Nested arraylo chepta',          
+          confirm : ['1-2-3', [{    //fifth , sixth nexted array    //Property 2 in PresenAdress
+            lockChey: '1-2-3 KGF'   //Here is the value to extract   //2nd Object in confirm Array
           }, null]]
         }]],
-        otherAddress: {
+        otherAddress: {       //4th Property in PersonDetails
           hno: 'Enduku Pushpa',
           pno: ' okate taginde! '
         }
-      },],
-    },
-  },
-  offerDetails: ['ede vere array']
-}, 'job not offered']
+      },],        //closing of 3rd Property in PersonDetails
+    },            //closing of 1st Property in PersonDetails
+  },              //closing of 1st Object in PersonDetails
+  offerDetails: ['ede vere array']    //Object 2 in Company array
+}, 'job not offered']       //Object 3 in Company array
 
 console.log(company[0])
 console.log('*******')
