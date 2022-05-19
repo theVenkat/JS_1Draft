@@ -18,7 +18,7 @@ const company = [{ //one nested array
           access:'Inko Nested arraylo chepta',          
           confirm : ['1-2-3', [{    //fifth , sixth nexted array    //Property 2 in PresenAdress
             lockChey: '1-2-3 KGF'   //Here is the value to extract   //2nd Object in confirm Array
-          }, null]]
+          }, null]]                 // Can you try to acces this null value beulah? 
         }]],
         otherAddress: {       //4th Property in PersonDetails
           hno: 'Enduku Pushpa',
