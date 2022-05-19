@@ -1,0 +1,66 @@
+//Array DeStructuring
+
+//Nested Array 5 layers
+
+const company = [{
+  personDetails: {
+    nameDetails:{
+      fname:'sai',
+      lname:'venkat',
+      age : {
+        truth : 'cheparu pushpa',
+        noTruth : undefined, //will get type error if I access notruth.somename, cannot define for undefined
+      },
+      address: [{
+        presentAddress: ['KGF', 'Bangarupu kundi ',[{
+          access:'Inko Nested arraylo chepta',
+          confirm : ['1-2-3', [{
+            lockChey: '1-2-3 KGF'
+          }, null]]
+        }]],
+        otherAddress: {
+          hno: 'Enduku Pushpa',
+          pno: ' okate taginde! '
+        }
+      },],
+    },
+  },
+  offerDetails: ['ede vere array']
+}, 'job not offered']
+
+console.log(company[0])
+console.log('*******')
+
+// console.log('***BREAKDOWN OF ARRAY DESTRUCTURING***')
+// // const [{personDetails:{nameDetails:{address}}}] = company
+// const [{personDetails:{nameDetails:{address}}}] = company
+// console.log(address)
+
+// console.log('******')
+// const [{presentAddress}] = address
+// console.log(presentAddress)
+
+// console.log('******')
+// // const [{presentAddress}] = address
+// const [a] = presentAddress[2]
+// // console.log([a]=presentAddress[2])
+// console.log(a)
+
+// console.log('******')
+
+// const {confirm} =a
+// console.log(confirm)
+
+// console.log('******')
+// console.log(confirm[1])
+
+// console.log('******')
+// const [{lockChey}] = confirm[1]
+// console.log(lockChey)
+
+// console.log()
+// console.log('***ONE LINE NESTED DESTRUCTURING***')
+// console.log()
+
+const [{personDetails:{nameDetails:{ address: [{presentAddress:[,,[{confirm:[, [{lockChey}],]}]]}] }}}] = company
+console.log(lockChey)
