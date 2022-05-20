@@ -1,0 +1,77 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+class NavBar extends React.Component {
+
+  state = {
+    color: 'red',
+    red: true,
+    yellow: false,
+    green: false
+  };
+
+  componentDidMount() {
+    setInterval(() => {
+      if (this.state.red === false && this.state.yellow === false && this.state.green === false) {
+        this.setState({ red: true, green: false, yellow: false });
+      } else if (this.state.red === true) {
+        this.setState({
+          green: true,
+          color: 'green',
+          yellow: false,
+          red: false
+        })
+      } else if (this.state.green === true) {
+        this.setState({
+          green: false,
+          yellow: true,
+          color: 'yellow',
+          red: false
+        })
+      } else if (this.state.yellow === true) {
+        this.setState({
+          green: false,
+          yellow: false,
+          red: true,
+          color: 'red'
+        })
+      }
+    }, 10 * 100);
+  }
+  
+
+  render() {
+    console.log('Render')
+    return <div>
+      <p> The Current traffic Signal is <strong>{this.state.color}</strong></p>
+      <br/>
+    </div >
+  }
+}
+
+
+class  App extends React.Component{
+
+  state = {
+    showTrafficbar : false
+  }
+
+  toggleTrafficSignal = () => {
+    this.setState({showTrafficbar :! this.state.showTrafficbar});
+  }
+
+  render (){
+    return<div>
+    <button onClick={this.toggleTrafficSignal}> Toggle Signal</button>
+    {this.state.showTrafficbar? <NavBar />: <p>Traffic Signal is Hidden</p>}
+  </div>
+
+  }
+}
+root.render(
+  <App/>
+);
